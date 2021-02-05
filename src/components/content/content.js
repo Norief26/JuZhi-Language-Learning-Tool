@@ -1,17 +1,8 @@
-import styled from 'styled-components/macro'
+import React from 'react'
+import { Container } from './style'
 
-export const Container = styled.div`
-    display: flex;
-    width: 1920px;
-    height: 1080px;
-    flex-direction: column;
-    align-items: center;
-    background-color: #EAEBE5;
-`
+function Content({ children, ...props}) {
+    return <Container {...props}>{children}</Container>
+}
 
-export const Group = styled.div`
-    margin-top: 24px;
-    width: 1240px;
-    height: 100vh;
-    background: url(${({ src }) => (src)})
-`
+export default Content

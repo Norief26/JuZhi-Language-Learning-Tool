@@ -1,31 +1,29 @@
-import styled from 'styled-components/macro'
+import React from 'react'
 import { Link as ReactRouterLink } from 'react-router-dom';
+import { Container, EmphasizedNavItem, Logo, Nav, NavItem } from './style'
 
-export const Container = styled.div`
-    display: flex;
-    justify-content: space-between;
-`
-export const EmphasizedNavItem = styled(ReactRouterLink)`
-    font-size: 20px;
-    padding: 13px 33px;
-    color: #FFFFFF;
-    text-decoration: none;
-    background-color: #88AF65;
-    border-radius: 8px;
-`
+function Header({ children, ...props }) {
+    return <Container {...props}>{children}</Container>
+}
 
-export const Nav = styled.div`
-    margin-top: 20px;
-`
+Header.Logo = function HeaderLogo({ to, children, ...props }) {
+    return (
+        <ReactRouterLink to={to}>
+            <Logo {...props}>{children}</Logo>
+        </ReactRouterLink>
+    )
+}
 
-export const NavItem = styled(ReactRouterLink)`
-    font-size: 20px;
-    margin-right: 40px;
-    color: #000000;
-    text-decoration: none;
-`
+Header.Nav = function HeaderNav({ children, ...props }) {
+    return <Nav {...props}>{children}</Nav>
+}
 
-export const Logo = styled.img`
-    height: 100px;
-    width: 100px;
-`
+Header.NavItem = function HeaderNavItem({ children, ...props }) {
+    return <NavItem {...props}>{children}</NavItem>
+}
+
+Header.EmphasizedNavItem = function HeaderEmphasizedNavItem({ children, ...props }) {
+    return <EmphasizedNavItem {...props}>{children}</EmphasizedNavItem>
+}
+
+export default Header
