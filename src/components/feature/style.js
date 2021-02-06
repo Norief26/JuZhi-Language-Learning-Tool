@@ -6,20 +6,23 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color: #EAEBE6;
+    padding: 300px 0px;
+
+    /* @media (max-width: 500px) {
+        padding: 300px 0px;
+    } */
 `
 
 export const LargeText = styled.span`
+    color: #000000;
     text-align: center;
     font-size: 40px;
-    font-weight: 400;
     margin-bottom: 50px;
 `
 
 export const SmallText = styled.span`
+    color: #000000;
     font-size: 20px;
-    font-weight: 300;
     margin-bottom: 50px;
 `
 
@@ -30,7 +33,8 @@ export const ButtonContainer = styled.div`
 `
 
 export const MainButton = styled(Link)`
-    padding: 20px 40px;
+    padding: 15px 40px;
+    height: 30px;
     font-size: 20px;
     color: #ffffff;
     text-decoration: none;
@@ -39,10 +43,11 @@ export const MainButton = styled(Link)`
 `
 
 export const SecondaryButton = styled(Link)`
-    padding: 20px 40px;
+    padding: 15px 40px;
+    height: 30px;
     font-size: 20px;
-    color: #000000;
+    color: #4D4D4D;
     text-decoration: none;
     background-color: #ffffff;
-    box-shadow: -1px 1px 6px #777777;
+    box-shadow: -1px 1px 5px #777777;
 `

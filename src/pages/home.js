@@ -1,40 +1,52 @@
 import React from 'react'
-import { Content, Header, Jumbotron } from '../components'
+import { Content, Courses, Header, Feature } from '../components'
 import * as ROUTES from '../constants/routes'
 
 function Home() {
     return (
         <>
         <Content>
-            <Header>
-                <Header.Logo to={ROUTES.HOME} src={'../../images/logo.png'}/>
-                <Header.Nav>
-                    <Header.NavItem>About Us</Header.NavItem>
-                    <Header.NavItem>Log In</Header.NavItem>
-                    <Header.EmphasizedNavItem>Sign Up</Header.EmphasizedNavItem>
-                </Header.Nav>
-            </Header>
+            <Content.Group src={`../../images/home_background.jpg`}>
+                <Header>
+                    <Header.Frame>
+                        <Header.Logo to={ROUTES.HOME} src={'../../images/logo_black.png'}/>
+                        <Header.Nav>
+                            <Header.NavItem>About Us</Header.NavItem>
+                            <Header.NavItem>Log In</Header.NavItem>
+                            <Header.EmphasizedNavItem>Sign Up</Header.EmphasizedNavItem>
+                        </Header.Nav>
+                    </Header.Frame>
 
-            <Jumbotron>
-                <Jumbotron.LargeText>
-                    Take A Step Closer Towards
-                    <br/>
-                    Language Proficiency
-                </Jumbotron.LargeText>
-                <Jumbotron.SmallText>
-                    Even with just a few minutes a day
-                </Jumbotron.SmallText>
+                    <Feature>
+                        <Feature.LargeText>
+                            Take A Step Closer Towards
+                            <br/>
+                            Language Proficiency
+                        </Feature.LargeText>
+                        <Feature.SmallText>
+                            Even with just a few minutes a day
+                        </Feature.SmallText>
 
-                <Jumbotron.ButtonContainer>
-                    <Jumbotron.MainButton>
-                        Start Learning
-                    </Jumbotron.MainButton>
+                        <Feature.ButtonContainer>
+                            <Feature.MainButton>
+                                Start Learning
+                            </Feature.MainButton>
 
-                    <Jumbotron.SecondaryButton>
-                        How It Works
-                    </Jumbotron.SecondaryButton>
-                </Jumbotron.ButtonContainer>
-            </Jumbotron>
+                            <Feature.SecondaryButton>
+                                How It Works
+                            </Feature.SecondaryButton>
+                        </Feature.ButtonContainer>
+                    </Feature>
+                </Header>
+            </Content.Group>
+
+            {/* <Content.Group>
+                <Courses>
+                    <Courses.Title>
+                        Courses
+                    </Courses.Title>
+                </Courses>
+            </Content.Group> */}
         </Content>
         </>
     )
