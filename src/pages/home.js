@@ -9,7 +9,7 @@ function Home() {
             <Content.Group src={`../../images/home_background.jpg`} gradient fitScreen>
                 <Header>
                     <Header.Frame>
-                        <Header.Logo to={ROUTES.HOME} src={'../../images/logo_black.png'}/>
+                        <Header.Logo to={ROUTES.HOME}/>
                         <Header.Nav>
                             <Header.NavItem>About Us</Header.NavItem>
                             <Header.NavItem>Log In</Header.NavItem>
@@ -40,13 +40,13 @@ function Home() {
                 </Header>
             </Content.Group>
 
-            <Content.Group fitScreen>
+            {/* <Content.Group fitScreen>
                 <Courses>
                     <Courses.Title>
                         Courses
                     </Courses.Title>
                 </Courses>
-            </Content.Group>
+            </Content.Group> */}
         </Content>
         </>
     )

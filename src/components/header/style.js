@@ -10,13 +10,15 @@ export const Container = styled.div`
 export const Frame = styled.div`
     display: flex;
     justify-content: space-between;
-    width: 1580px;
+    width: 100%;
     padding: 10px;
     position: fixed;
     top: 0;
+    transition: background-color 0.5s ease;
+    border-radius: 0px 0px 20px 20px;
 
-    @media (max-width: 1580px) {
-        width: 100%;
+    @media (max-width: 700px) {
+        height: 48px;
     }
 
     > * {
@@ -30,6 +32,11 @@ export const Frame = styled.div`
             margin-right: 20px;
         }
     }
+
+    &.scrolling{
+        background-color: #ffffff;
+        box-shadow: -1px 1px 6px #777777;
+    }
 `
 export const EmphasizedNavItem = styled(Link)`
     font-size: 18px;
@@ -42,7 +49,11 @@ export const EmphasizedNavItem = styled(Link)`
 
     @media (max-width: 700px) {
         font-size: 16px;
-        padding: 11px 20px;
+        padding: 6px 20px;
+    }
+
+    &:hover {
+        background-color: #8fb76a;
     }
 
 `
@@ -64,7 +75,7 @@ export const NavItem = styled(Link)`
 `
 
 export const Logo = styled.img`
-    height: 80px;
+    height: 60px;
 
     @media (max-width: 700px) {
         height: 48px;

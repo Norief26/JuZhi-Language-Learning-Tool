@@ -17,7 +17,7 @@ export const LargeText = styled.span`
     margin-bottom: 50px;
 
     @media (max-width: 700px) {
-        font-size: 28px;
+        font-size: 24px;
     }
 `
 
@@ -27,7 +27,7 @@ export const SmallText = styled.span`
     margin-bottom: 50px;
 
     @media (max-width: 700px) {
-        font-size: 16px;
+        font-size: 14px;
     }
 `
 
@@ -55,6 +55,10 @@ export const MainButton = styled(Link)`
         font-size: 14px;
         padding: 10px 30px;
     }
+
+    &:hover {
+        background-color: #8fb76a;
+    }
 `
 
 export const SecondaryButton = styled(Link)`
@@ -70,5 +74,9 @@ export const SecondaryButton = styled(Link)`
     @media (max-width: 700px) {
         font-size: 14px;
         padding: 10px 30px;
+    }
+
+    &:hover {
+        background-color: #f9f9f9;
     }
 `
