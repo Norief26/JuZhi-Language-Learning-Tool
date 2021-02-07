@@ -5,30 +5,29 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url(${({ src }) => (src)}) bottom left / cover; */
 `
 
 export const Frame = styled.div`
     display: flex;
     justify-content: space-between;
     width: 1580px;
-    /* position: fixed; */
+    padding: 10px;
+    position: fixed;
+    top: 0;
 
     @media (max-width: 1580px) {
         width: 100%;
-        min-width: 500px;
     }
 
     > * {
         &:first-child {
-            margin-top: 20px;
-            margin-left: 40px;
+            margin-left: 20px;
         }
     }
 
     > * {
         &:last-child {
-            margin-right: 40px;
+            margin-right: 20px;
         }
     }
 `
@@ -40,10 +39,17 @@ export const EmphasizedNavItem = styled(Link)`
     background-color: #88AF65;
     border-radius: 8px;
     box-shadow: -1px 1px 6px #777777;
+
+    @media (max-width: 700px) {
+        font-size: 16px;
+        padding: 11px 20px;
+    }
+
 `
 
 export const Nav = styled.div`
-    margin-top: 45px;
+    display: flex;
+    align-items: center;
 `
 
 export const NavItem = styled(Link)`
@@ -59,4 +65,8 @@ export const NavItem = styled(Link)`
 
 export const Logo = styled.img`
     height: 80px;
+
+    @media (max-width: 700px) {
+        height: 48px;
+    }
 `

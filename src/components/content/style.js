@@ -5,10 +5,15 @@ export const Container = styled.div`
 `
 export const Group = styled.div`
     display: flex;
+    align-items: center;
     justify-content: center;
-    min-width: 500px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url(${({ src }) => (src)}) bottom / cover;
 
+    ${({ fitScreen }) => fitScreen && `height: 100vh;`};
+
+    background: ${({ gradient, src}) => (gradient ? 
+        `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url(${src}) bottom / cover` 
+        : `url(${src})`)};
+    
     > * {
         &:first-child {
             width: 1580px;
