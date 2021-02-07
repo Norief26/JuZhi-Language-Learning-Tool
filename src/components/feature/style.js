@@ -50,6 +50,7 @@ export const MainButton = styled(Link)`
     text-decoration: none;
     background-color: #88AF65;
     box-shadow: -1px 1px 6px #777777;
+    transition: background-color 0.3s ease;
 
     @media (max-width: 700px) {
         font-size: 14px;
@@ -70,6 +71,7 @@ export const SecondaryButton = styled(Link)`
     text-decoration: none;
     background-color: #ffffff;
     box-shadow: -1px 1px 5px #777777;
+    transition: background-color 0.3s ease;
 
     @media (max-width: 700px) {
         font-size: 14px;
@@ -77,6 +79,6 @@ export const SecondaryButton = styled(Link)`
     }
 
     &:hover {
-        background-color: #f9f9f9;
+        background-color: #f5f5f5;
     }
 `

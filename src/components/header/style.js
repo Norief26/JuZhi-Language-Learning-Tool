@@ -46,13 +46,14 @@ export const EmphasizedNavItem = styled(Link)`
     background-color: #88AF65;
     border-radius: 8px;
     box-shadow: -1px 1px 6px #777777;
+    transition: background-color 0.3s ease;
 
     @media (max-width: 700px) {
         font-size: 16px;
         padding: 6px 20px;
     }
 
-    &:hover {
+    &:hover:focus {
         background-color: #8fb76a;
     }
 
@@ -79,5 +80,9 @@ export const Logo = styled.img`
 
     @media (max-width: 700px) {
         height: 48px;
+    }
+
+    &:hover {
+        opacity: 0.9;
     }
 `
