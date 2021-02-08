@@ -7,10 +7,10 @@ import * as ROUTES from '../constants/routes'
 function SignIn() {
     return (
         <Content>
-            <Content.Group src={!isMobile && `../../images/home_background.jpg`} fitScreen>
+            <Content.Group src={!isMobile && `../../images/home_background.jpg`} fitScreen gradient>
                 <Form isMobile={isMobile}>
                     <Form.Frame>
-                        <Form.Logo to={ROUTES.HOME} src={'../images/logo_black.png'}/>
+                        <Form.Logo to={ROUTES.WELCOME} src={'../images/logo_black.png'}/>
                         <Form.Input
                             placeholder="Email Address"
                         />

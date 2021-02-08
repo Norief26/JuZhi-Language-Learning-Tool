@@ -32,11 +32,25 @@ export const Divider = styled.hr`
     color: lightgray;
     width: 80%;
     max-width: 600px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    /* margin-top: 10px; */
+    /* margin-bottom: 20px; */
 
     @media (max-height: 500px) {
-        margin-bottom: 10px
+        /* display: none; */
+        /* margin-bottom: 10px */
+    }
+`
+
+export const Error = styled.span`
+    color: #ffffff;
+    /* height: 0px; */
+    font-size: 16px;
+    padding: 8px;
+    background-color: #E87C03;
+    border-radius: 5px;
+
+    @media (max-height: 500px) {
+        padding: 4px;
     }
 `
 
@@ -46,11 +60,11 @@ export const Frame = styled.div`
     width: 75%;
     max-width: 500px;
 
-    input, button {
+    button, input, span {
         margin-bottom: 18px;
 
         @media (max-height: 500px) {
-            margin-bottom: 12px
+            margin-bottom: 4px
         }
     }
 `
@@ -59,7 +73,7 @@ export const Google = styled.div`
     background: url('../images/google_normal.png') no-repeat;
     height: 56px;
     width: 230px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background-size: contain;
 `
 
@@ -72,11 +86,19 @@ export const Logo = styled.img`
     &:hover {
         opacity: 0.9;
     }
+
+    @media (max-height: 500px) {
+        margin: 10px 0px;
+    }
 `
 
 export const Input = styled.input`
     font-size: 16px;
     padding: 8px;
+
+    @media (max-height: 500px) {
+        padding: 4px;
+    }
 `
 
 export const Text = styled.span`

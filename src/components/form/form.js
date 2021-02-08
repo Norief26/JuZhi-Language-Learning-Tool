@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Container, Divider, Frame, Google, Logo, Input, Text } from './styles'
+import { Button, Container, Divider, Error, Frame, Google, Logo, Input, Text } from './styles'
 
 function Form({ children, ...props }) {
     return <Container {...props}>{children}</Container>
@@ -12,6 +12,10 @@ Form.Button = ({ children, ...props }) => {
 
 Form.Divider = ({ children, ...props }) => {
     return <Divider {...props}>{children}</Divider>
+}
+
+Form.Error = ({ children, ...props }) => {
+    return <Error {...props}>{children}</Error>
 }
 
 Form.Frame = ({ children, ...props }) => {
