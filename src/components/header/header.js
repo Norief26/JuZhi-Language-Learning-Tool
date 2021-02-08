@@ -4,7 +4,7 @@ import { Container, EmphasizedNavItem, Frame, Logo, Nav, NavItem } from './style
 
 const ScrollContext = createContext()
 
-function Header({ children, ...props }) {
+function Header({ active, children, ...props }) {
     const [topOfPage, setTopOfPage] = useState(true)
 
     const handleScroll = () => {
@@ -20,7 +20,7 @@ function Header({ children, ...props }) {
     }, [])
 
     return (
-        <ScrollContext.Provider value={topOfPage}>
+        <ScrollContext.Provider value={{ active, topOfPage}}>
             <Container {...props}>{children}</Container>
         </ScrollContext.Provider>
     )
@@ -31,17 +31,17 @@ Header.EmphasizedNavItem = function HeaderEmphasizedNavItem({ children, ...props
 }
 
 Header.Frame = function HeaderFrame({ children, ...props }) {
-    const topOfPage = useContext(ScrollContext)
+    const { active, topOfPage } = useContext(ScrollContext)
 
-    return <Frame {...props} className={!topOfPage ? 'scrolling' : ''}>{children}</Frame>
+    return <Frame {...props} active className={!topOfPage || active ? 'scrolling' : ''}>{children}</Frame>
 }
 
 Header.Logo = function HeaderLogo({ to, children, ...props }) {
-    const topOfPage = useContext(ScrollContext)
+    const { active, topOfPage } = useContext(ScrollContext)
 
     return (
         <Link to={to}>
-            <Logo {...props} src={topOfPage ? '../images/logo_white.png' : '../images/logo_black.png'}>{children}</Logo>
+            <Logo {...props} src={!topOfPage || active ? '../images/logo_black.png' : '../images/logo_white.png'}>{children}</Logo>
         </Link>
     )
 }

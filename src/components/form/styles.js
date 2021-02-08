@@ -1,0 +1,92 @@
+import styled from 'styled-components/macro'
+
+export const Button = styled.button`
+    font-size: 16px;
+    color: #ffffff;
+    padding: 8px;
+    background-color: #88AF65;
+    border: none;
+
+    &:hover {
+        background-color: #8fb76a;
+    }
+`
+
+export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 450px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -1px 1px 6px #777777;
+
+    ${({ isMobile }) => isMobile && `width: 100%; height: 100%;`};
+
+    @media (max-width: 500px) {
+        /* width: 350px; */
+    }
+`
+
+export const Divider = styled.hr`
+    color: lightgray;
+    width: 80%;
+    max-width: 600px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    @media (max-height: 500px) {
+        margin-bottom: 10px
+    }
+`
+
+export const Frame = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-width: 500px;
+
+    input, button {
+        margin-bottom: 18px;
+
+        @media (max-height: 500px) {
+            margin-bottom: 12px
+        }
+    }
+`
+
+export const Google = styled.div`
+    background: url('../images/google_normal.png') no-repeat;
+    height: 56px;
+    width: 230px;
+    margin-bottom: 20px;
+    background-size: contain;
+`
+
+export const Logo = styled.img`
+    width: 100%;
+    height: 48px;
+    margin: 20px 0px;
+    object-fit: contain;
+
+    &:hover {
+        opacity: 0.9;
+    }
+`
+
+export const Input = styled.input`
+    font-size: 16px;
+    padding: 8px;
+`
+
+export const Text = styled.span`
+    font-size: 16px;
+    margin: 5px 0px;
+
+    a {
+        padding: 5px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #88AF65;
+    }
+`

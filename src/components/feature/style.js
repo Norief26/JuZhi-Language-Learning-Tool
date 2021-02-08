@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    height: inherit;
+    /* height: inherit; */
     align-items: center;
     justify-content: center;
     /* padding: 150px 0px; */
@@ -13,11 +13,18 @@ export const Container = styled.div`
 export const LargeText = styled.span`
     color: #000000;
     text-align: center;
-    font-size: 40px;
+    font-size: 52px;
     margin-bottom: 50px;
+    /* font-weight: bold; */
+    text-shadow: 1px 1px #FFFFFF;
 
     @media (max-width: 700px) {
-        font-size: 24px;
+        font-size: 28px;
+    }
+
+    @media (max-height: 500px) {
+        font-size: 28px;
+        margin-bottom: 20px;
     }
 `
 
@@ -27,7 +34,12 @@ export const SmallText = styled.span`
     margin-bottom: 50px;
 
     @media (max-width: 700px) {
-        font-size: 14px;
+        font-size: 16px;
+    }
+
+    @media (max-height: 500px) {
+        font-size: 16px;
+        margin-bottom: 30px;
     }
 `
 

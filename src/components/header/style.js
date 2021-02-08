@@ -9,13 +9,15 @@ export const Container = styled.div`
 
 export const Frame = styled.div`
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 10px;
+    padding: 5px 0px;
     position: fixed;
     top: 0;
+    left: 0;
     transition: background-color 0.5s ease;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px 8px 8px;
 
     @media (max-width: 700px) {
         height: 48px;
@@ -53,7 +55,16 @@ export const EmphasizedNavItem = styled(Link)`
         padding: 6px 20px;
     }
 
-    &:hover:focus {
+    @media (max-height: 500px) {
+        font-size: 16px;
+        padding: 6px 20px;
+    }
+
+    &:hover {
+        background-color: #8fb76a;
+    }
+
+    &:focus {
         background-color: #8fb76a;
     }
 
@@ -80,6 +91,10 @@ export const Logo = styled.img`
 
     @media (max-width: 700px) {
         height: 48px;
+    }
+
+    @media (max-height: 500px) {
+        height: 36px;
     }
 
     &:hover {

@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
+    width: 1580px;
 `
 export const Course = styled.div`
     display: flex;
@@ -31,6 +32,7 @@ export const CourseTitle = styled.span`
 export const Title = styled.span`
     padding: 48px;
     font-size: 30px;
+    font-weight: bold;
 `
 
 export const Icon = styled.img`

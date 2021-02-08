@@ -12,8 +12,8 @@ function Home() {
                         <Header.Logo to={ROUTES.HOME}/>
                         <Header.Nav>
                             <Header.NavItem>About Us</Header.NavItem>
-                            <Header.NavItem>Log In</Header.NavItem>
-                            <Header.EmphasizedNavItem>Sign Up</Header.EmphasizedNavItem>
+                            <Header.NavItem to={ROUTES.SIGN_IN}>Log In</Header.NavItem>
+                            <Header.EmphasizedNavItem to={ROUTES.SIGN_UP}>Sign Up</Header.EmphasizedNavItem>
                         </Header.Nav>
                     </Header.Frame>
 
@@ -28,7 +28,7 @@ function Home() {
                         </Feature.SmallText>
 
                         <Feature.ButtonContainer>
-                            <Feature.MainButton>
+                            <Feature.MainButton to={ROUTES.SIGN_UP}>
                                 Start Learning
                             </Feature.MainButton>
 
