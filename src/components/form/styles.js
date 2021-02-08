@@ -54,7 +54,7 @@ export const Error = styled.span`
     }
 `
 
-export const Frame = styled.div`
+export const Frame = styled.form`
     display: flex;
     flex-direction: column;
     width: 75%;
@@ -75,11 +75,16 @@ export const Google = styled.div`
     width: 230px;
     margin-bottom: 10px;
     background-size: contain;
+
+    &:active {
+        background: url('../images/google_pressed.png') no-repeat;
+        background-size: contain;
+    }
 `
 
 export const Logo = styled.img`
     width: 100%;
-    height: 48px;
+    height: 64px;
     margin: 20px 0px;
     object-fit: contain;
 
@@ -88,6 +93,7 @@ export const Logo = styled.img`
     }
 
     @media (max-height: 500px) {
+        height: 48px;
         margin: 10px 0px;
     }
 `

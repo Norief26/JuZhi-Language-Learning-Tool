@@ -11,12 +11,31 @@ function SignUp() {
     const [confirm, setConfirm] = useState('')
     const [error, setError] = useState('')
 
+    const handleSignUp = (e) => {
+        e.preventDefault();
+        if(password !== confirm) {
+            setEmail('')
+            setPassword('')
+            setConfirm('')
+            setError('Passwords do not match.')
+        } else {
+            auth.createUserWithEmailAndPassword(email, password).then((userCredential) => {
+                console.log(userCredential)
+            }).catch((error) => {
+                setEmail('')
+                setPassword('')
+                setConfirm('')
+                setError(error.message)
+            });
+        }
+    }
+
     const handleGoogleSignIn = () => {
         auth.signInWithRedirect(provider).catch((error) => {
             setEmail('')
             setPassword('')
             setConfirm('')
-            setError(error)
+            setError(error.message)
         });
     }
 
@@ -24,15 +43,17 @@ function SignUp() {
         <Content>
             <Content.Group src={!isMobile && '../images/home_background.jpg'} fitScreen gradient>
                 <Form isMobile={isMobile}>
-                    <Form.Frame>
+                    <Form.Frame onSubmit={handleSignUp}>
                         <Form.Logo to={ROUTES.WELCOME} src={'../images/logo_black.png'}/>
 
                         {error && <Form.Error>{error}</Form.Error>}
+
                         <Form.Input
                             placeholder="Email Address"
                             value={email}
                             type="email"
                             onChange={({ target }) => setEmail(target.value)}
+                            autoFocus
                         />
                         <Form.Input
                             placeholder="Password"

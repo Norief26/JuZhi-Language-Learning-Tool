@@ -7,7 +7,7 @@ function Form({ children, ...props }) {
 }
 
 Form.Button = ({ children, ...props }) => {
-    return <Button {...props}>{children}</Button>
+    return <Button {...props} type="submit">{children}</Button>
 }
 
 Form.Divider = ({ children, ...props }) => {
