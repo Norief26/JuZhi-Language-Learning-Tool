@@ -10,7 +10,6 @@ export const Container = styled.div`
 export const Frame = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
     padding: 5px 0px;
     position: fixed;
@@ -18,6 +17,8 @@ export const Frame = styled.div`
     left: 0;
     background-color: rgba(17,17,17,0.85);
     box-shadow: -1px 1px 6px #777777;
+
+    ${({ center }) => ( center ?  `justify-content: center;`: `justify-content: space-between;`)};
 
     @media (max-width: 700px) {
         height: 48px;

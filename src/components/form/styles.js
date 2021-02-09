@@ -19,17 +19,13 @@ export const Button = styled.button`
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
     width: 450px;
+    background-color: #ffffff;
     align-items: center;
     justify-content: center;
     box-shadow: -1px 1px 6px #777777;
 
     ${({ isMobile }) => isMobile && `width: 100%; height: 100%;`};
-
-    @media (max-width: 500px) {
-        /* width: 350px; */
-    }
 `
 
 export const Divider = styled.hr`
@@ -84,6 +80,20 @@ export const Google = styled.div`
         background: url('../images/google_pressed.png') no-repeat;
         background-size: contain;
     }
+
+    @media (max-height: 500px) {
+        height: 45px;
+    }
+`
+
+export const Input = styled.input`
+    font-size: 16px;
+    padding: 8px;
+    background-color: #ffffff;
+
+    @media (max-height: 500px) {
+        padding: 4px;
+    }
 `
 
 export const Logo = styled.img`
@@ -102,15 +112,6 @@ export const Logo = styled.img`
     }
 `
 
-export const Input = styled.input`
-    font-size: 16px;
-    padding: 8px;
-
-    @media (max-height: 500px) {
-        padding: 4px;
-    }
-`
-
 export const Text = styled.span`
     font-size: 16px;
     margin: 5px 0px;
@@ -121,4 +122,9 @@ export const Text = styled.span`
         text-decoration: none;
         color: #88AF65;
     }
+`
+
+export const Title = styled.h2`
+    margin-top: 56px;
+    margin-bottom: 16px;
 `

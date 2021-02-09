@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Container, Divider, Error, Frame, Google, Logo, Input, Text } from './styles'
+import { Button, Container, Divider, Error, Frame, Google, Input, Logo, Text, Title} from './styles'
 
 function Form({ children, ...props }) {
     return <Container {...props}>{children}</Container>
@@ -40,6 +40,10 @@ Form.Input = ({ children, ...props}) => {
 
 Form.Text = ({ children, ...props }) => {
     return <Text {...props}>{children}</Text>
+}
+
+Form.Title = function FormTitle({ children, ...props }) {
+    return <Title {...props}>{children}</Title>
 }
 
 export default Form

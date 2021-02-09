@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { isMobile } from 'react-device-detect'
 import { auth } from './../firebase/firebase'
-import { Content, Form } from '../components'
+import { Content, Form, Header } from '../components'
 import * as ROUTES from '../constants/routes'
 
 function SignIn() {
@@ -25,9 +25,17 @@ function SignIn() {
     return (
         <Content>
             <Content.Group src={!isMobile && `../../images/home_background.jpg`} fitScreen gradient>
+                <Header>
+                    <Header.Frame>
+                        <Header.Logo to={ROUTES.WELCOME}/>
+                    </Header.Frame>
+                </Header>
+
                 <Form isMobile={isMobile}>
                     <Form.Frame>
-                        <Form.Logo to={ROUTES.WELCOME} src={'../images/logo_black.png'}/>
+                        <Form.Title>
+                            Sign In
+                        </Form.Title>
 
                         {error && <Form.Error>{error}</Form.Error>}
 
@@ -36,7 +44,6 @@ function SignIn() {
                             value={email}
                             type="email"
                             onChange={({ target }) => setEmail(target.value)}
-                            autoFocus
                         />
                         <Form.Input
                             placeholder="Password"

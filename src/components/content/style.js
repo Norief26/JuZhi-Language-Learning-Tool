@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 export const Container = styled.div`
     background-color: #F9FAFC;
 `
-export const Group = styled.div`
+export const Group = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
