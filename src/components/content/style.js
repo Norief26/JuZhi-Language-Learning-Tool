@@ -8,7 +8,7 @@ export const Group = styled.div`
     align-items: center;
     justify-content: center;
 
-    ${({ fitScreen }) => fitScreen && `height: 100vh;`};
+    ${({ fitScreen }) => fitScreen && `height: 100vh`};
 
     background: ${({ gradient, src}) => (gradient ? 
         `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url(${src}) center / cover` 

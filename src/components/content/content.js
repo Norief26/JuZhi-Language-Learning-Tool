@@ -5,7 +5,7 @@ function Content({ children, ...props }) {
     return <Container {...props}>{children}</Container>
 }
 
-Content.Group = function({ children, ...props }) {
+Content.Group = function ContentGroup({ children, ...props }) {
     return <Group {...props}>{children}</Group>
 }
 

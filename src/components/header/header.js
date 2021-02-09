@@ -1,29 +1,9 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import { Container, EmphasizedNavItem, Frame, Logo, Nav, NavItem } from './style'
 
-const ScrollContext = createContext()
-
 function Header({ active, children, ...props }) {
-    const [topOfPage, setTopOfPage] = useState(true)
-
-    const handleScroll = () => {
-        (window.pageYOffset <= 0) ? setTopOfPage(true) : setTopOfPage(false)
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [])
-
-    return (
-        <ScrollContext.Provider value={{ active, topOfPage}}>
-            <Container {...props}>{children}</Container>
-        </ScrollContext.Provider>
-    )
+    return <Container {...props}>{children}</Container>
 }
 
 Header.EmphasizedNavItem = function HeaderEmphasizedNavItem({ children, ...props }) {
@@ -31,17 +11,13 @@ Header.EmphasizedNavItem = function HeaderEmphasizedNavItem({ children, ...props
 }
 
 Header.Frame = function HeaderFrame({ children, ...props }) {
-    const { active, topOfPage } = useContext(ScrollContext)
-
-    return <Frame {...props} active className={!topOfPage || active ? 'scrolling' : ''}>{children}</Frame>
+    return <Frame {...props}>{children}</Frame>
 }
 
 Header.Logo = function HeaderLogo({ to, children, ...props }) {
-    const { active, topOfPage } = useContext(ScrollContext)
-
     return (
         <Link to={to}>
-            <Logo {...props} src={!topOfPage || active ? '../images/logo_black.png' : '../images/logo_white.png'}>{children}</Logo>
+            <Logo {...props} src={'../images/logo_white.png'}>{children}</Logo>
         </Link>
     )
 }

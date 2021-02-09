@@ -16,8 +16,8 @@ export const Frame = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    transition: background-color 0.5s ease;
-    border-radius: 0px 0px 8px 8px;
+    background-color: rgba(17,17,17,0.85);
+    box-shadow: -1px 1px 6px #777777;
 
     @media (max-width: 700px) {
         height: 48px;
@@ -34,30 +34,22 @@ export const Frame = styled.div`
             margin-right: 20px;
         }
     }
-
-    &.scrolling{
-        background-color: #ffffff;
-        box-shadow: -1px 1px 6px #777777;
-    }
 `
 export const EmphasizedNavItem = styled(Link)`
-    font-size: 18px;
-    padding: 13px 33px;
+    font-size: 16px;
+    padding: 6px 20px;
     color: #FFFFFF;
     text-decoration: none;
     background-color: #88AF65;
-    border-radius: 8px;
-    box-shadow: -1px 1px 6px #777777;
+    border-radius: 4px;
     transition: background-color 0.3s ease;
 
     @media (max-width: 700px) {
         font-size: 16px;
-        padding: 6px 20px;
     }
 
     @media (max-height: 500px) {
         font-size: 16px;
-        padding: 6px 20px;
     }
 
     &:hover {
@@ -76,18 +68,34 @@ export const Nav = styled.div`
 `
 
 export const NavItem = styled(Link)`
+    position: relative;
     font-size: 16px;
     margin-right: 40px;
-    color: #000000;
+    color: #CCCCCC;
     text-decoration: none;
 
     @media (max-width: 700px) {
         display: none;
     }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 125%;
+        height: 2px;
+        width: 100%;
+        background-color: #CCCCCC;
+        transform: scale(0, 1);
+        transition: -webkit-transform 0.1s ease-out;
+    }
+
+    &:hover::before {
+        transform: scale(1, 1);
+    }
 `
 
 export const Logo = styled.img`
-    height: 60px;
+    height: 48px;
 
     @media (max-width: 700px) {
         height: 48px;

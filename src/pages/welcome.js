@@ -11,9 +11,9 @@ function Home() {
                     <Header.Frame>
                         <Header.Logo to={ROUTES.WELCOME}/>
                         <Header.Nav>
-                            <Header.NavItem to={ROUTES.WELCOME}>About Us</Header.NavItem>
-                            <Header.NavItem to={ROUTES.SIGN_IN}>Log In</Header.NavItem>
-                            <Header.EmphasizedNavItem to={ROUTES.SIGN_UP}>Sign Up</Header.EmphasizedNavItem>
+                            <Header.NavItem to={ROUTES.WELCOME}>ABOUT US</Header.NavItem>
+                            <Header.NavItem to={ROUTES.SIGN_IN}>LOG IN</Header.NavItem>
+                            <Header.EmphasizedNavItem to={ROUTES.SIGN_UP}>SIGN UP</Header.EmphasizedNavItem>
                         </Header.Nav>
                     </Header.Frame>
 

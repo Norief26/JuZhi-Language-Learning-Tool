@@ -10,6 +10,10 @@ export const Button = styled.button`
     &:hover {
         background-color: #8fb76a;
     }
+
+    @media (max-height: 500px) {
+        padding: 4px;
+    }
 `
 
 export const Container = styled.div`

@@ -33,6 +33,7 @@ export const Title = styled.span`
     padding: 48px;
     font-size: 30px;
     font-weight: bold;
+    text-align: center;
 `
 
 export const Icon = styled.img`
@@ -51,5 +52,5 @@ export const IconGroup = styled.div`
     justify-items: center;
     flex-wrap: wrap;
     padding-bottom: 64px;
-    padding-right: 64px;
+    /* padding-right: 64px; */
 `
