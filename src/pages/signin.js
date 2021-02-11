@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { isMobile } from 'react-device-detect'
-import { auth } from './../firebase/firebase'
+import { auth, provider } from './../firebase/firebase'
 import { Content, Form, Header } from '../components'
 import * as ROUTES from '../constants/routes'
 
@@ -22,15 +22,23 @@ function SignIn() {
         });
     }
 
+    const handleGoogleSignIn = () => {
+        auth.signInWithRedirect(provider).catch((error) => {
+            setEmail('')
+            setPassword('')
+            setError(error.message)
+        });
+    }
+
     return (
         <Content>
-            <Content.Group src={!isMobile && `../../images/home_background.jpg`} fitScreen gradient>
-                <Header>
-                    <Header.Frame>
-                        <Header.Logo to={ROUTES.WELCOME}/>
-                    </Header.Frame>
-                </Header>
+            <Header>
+                <Header.Frame>
+                    <Header.Logo to={ROUTES.WELCOME}/>
+                </Header.Frame>
+            </Header>
 
+            <Content.Group src={!isMobile && `../../images/home_background.jpg`} fitScreen gradient>
                 <Form isMobile={isMobile}>
                     <Form.Frame>
                         <Form.Title>
@@ -66,7 +74,7 @@ function SignIn() {
 
                     <Form.Divider/>
 
-                    <Form.Google/>
+                    <Form.Google onClick={handleGoogleSignIn}/>
                 </Form>
             </Content.Group>
         </Content>

@@ -6,27 +6,27 @@ function Form({ children, ...props }) {
     return <Container {...props}>{children}</Container>
 }
 
-Form.Button = ({ children, ...props }) => {
+Form.Button = function FormButton({ children, ...props }) {
     return <Button {...props} type="submit">{children}</Button>
 }
 
-Form.Divider = ({ children, ...props }) => {
+Form.Divider = function FormDivider({ children, ...props }) {
     return <Divider {...props}>{children}</Divider>
 }
 
-Form.Error = ({ children, ...props }) => {
+Form.Error = function FormError({ children, ...props }) {
     return <Error {...props}>{children}</Error>
 }
 
-Form.Frame = ({ children, ...props }) => {
+Form.Frame = function FormFrame({ children, ...props }) {
     return <Frame {...props}>{children}</Frame>
 }
 
-Form.Google = ({ children, ...props }) => {
+Form.Google = function FormGoogle({ children, ...props }) {
     return <Google {...props}>{children}</Google>
 }
 
-Form.Logo = ({ to, children, ...props }) => {
+Form.Logo = function FormLogo({ to, children, ...props }) {
     return (
         <Link to={to}>
             <Logo {...props}>{children}</Logo>
@@ -34,11 +34,11 @@ Form.Logo = ({ to, children, ...props }) => {
     )
 }
 
-Form.Input = ({ children, ...props}) => {
+Form.Input = function FormInput({ children, ...props}) {
     return <Input {...props}>{children}</Input>
 }
 
-Form.Text = ({ children, ...props }) => {
+Form.Text = function FormText({ children, ...props }) {
     return <Text {...props}>{children}</Text>
 }
 

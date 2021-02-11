@@ -6,17 +6,18 @@ function Home() {
     return (
         <>
         <Content>
-            <Content.Group src={`../../images/home_background.jpg`} gradient fitScreen>
-                <Header>
-                    <Header.Frame>
-                        <Header.Logo to={ROUTES.WELCOME}/>
-                        <Header.Nav>
-                            <Header.NavItem to={ROUTES.WELCOME}>ABOUT US</Header.NavItem>
-                            <Header.NavItem to={ROUTES.SIGN_IN}>LOG IN</Header.NavItem>
-                            <Header.EmphasizedNavItem to={ROUTES.SIGN_UP}>SIGN UP</Header.EmphasizedNavItem>
-                        </Header.Nav>
-                    </Header.Frame>
+            <Header>
+                <Header.Frame>
+                <Header.Logo to={ROUTES.WELCOME}/>
+                    <Header.Nav>
+                        <Header.NavItem to={ROUTES.WELCOME}>ABOUT US</Header.NavItem>
+                        <Header.NavItem to={ROUTES.SIGN_IN}>LOG IN</Header.NavItem>
+                        <Header.EmphasizedNavItem to={ROUTES.SIGN_UP}>SIGN UP</Header.EmphasizedNavItem>
+                    </Header.Nav>
+                </Header.Frame>
+            </Header>
 
+            <Content.Group src={`../../images/home_background.jpg`} gradient fitScreen>
                     <Feature>
                         <Feature.LargeText>
                             Take A Step Closer Towards
@@ -29,7 +30,7 @@ function Home() {
 
                         <Feature.ButtonContainer>
                             <Feature.MainButton to={ROUTES.SIGN_UP}>
-                                Start Learning
+                                START LEARNING
                             </Feature.MainButton>
 
                             <Feature.SecondaryButton to={ROUTES.WELCOME}>
@@ -37,7 +38,6 @@ function Home() {
                             </Feature.SecondaryButton>
                         </Feature.ButtonContainer>
                     </Feature>
-                </Header>
             </Content.Group>
 
             <Content.Group>

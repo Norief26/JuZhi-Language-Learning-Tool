@@ -41,13 +41,13 @@ function SignUp() {
 
     return (
         <Content>
+            <Header>
+                <Header.Frame>
+                    <Header.Logo to={ROUTES.WELCOME}/>
+                </Header.Frame>
+            </Header>
+
             <Content.Group src={!isMobile && '../images/home_background.jpg'} fitScreen gradient>
-                <Header>
-                    <Header.Frame>
-                        <Header.Logo to={ROUTES.WELCOME}/>
-                    </Header.Frame>
-                </Header>
-                
                 <Form isMobile={isMobile}>
                     <Form.Frame onSubmit={handleSignUp}>
                         <Form.Title>

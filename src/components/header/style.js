@@ -7,6 +7,69 @@ export const Container = styled.div`
     align-items: center;
 `
 
+export const DropDownButton = styled.span`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    background-color: #4B7253;
+    position: relative;
+    width: 110px;
+    cursor: pointer;
+    user-select: none;
+    transition: border-radius 0.3s ease;
+
+    > * {
+        &:last-child {
+            border-left: 1px solid #FFFFFF;
+            padding-left: 8px;
+            margin-left: 20px;
+        }
+    }
+
+    &.show {
+        border-radius: 4px 4px 0px 0px;
+    }
+
+    &.hide {
+        border-radius: 4px;
+    }
+`
+
+export const DropDownMenu = styled.div`
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: inherit;
+
+    &.show {
+        display: flex;
+    }
+
+    &.hide {
+        display: none;
+    }
+`
+
+export const DropDownMenuItem = styled.span`
+    padding: 8px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    width: inherit;
+    height: inherit;
+    background-color: rgba(17,17,17,0.85);
+
+    &:hover {
+        background-color:rgba(30, 30, 30, 0.85)
+    }
+
+    &:last-of-type {
+        border-bottom: none;
+        border-radius: 0px 0px 10px 10px;
+    }
+`
+
 export const Frame = styled.div`
     display: flex;
     align-items: center;
@@ -41,7 +104,7 @@ export const EmphasizedNavItem = styled(Link)`
     padding: 6px 20px;
     color: #FFFFFF;
     text-decoration: none;
-    background-color: #88AF65;
+    background-color: #4B7253;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 
@@ -54,13 +117,8 @@ export const EmphasizedNavItem = styled(Link)`
     }
 
     &:hover {
-        background-color: #8fb76a;
+        background-color: #638E6C;
     }
-
-    &:focus {
-        background-color: #8fb76a;
-    }
-
 `
 
 export const Nav = styled.div`

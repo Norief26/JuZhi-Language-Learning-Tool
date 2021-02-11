@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom'
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    /* height: inherit; */
     align-items: center;
     justify-content: center;
-    /* padding: 150px 0px; */
 `
 
 export const LargeText = styled.span`
@@ -15,7 +13,6 @@ export const LargeText = styled.span`
     text-align: center;
     font-size: 52px;
     margin-bottom: 50px;
-    /* font-weight: bold; */
     text-shadow: 1px 1px #FFFFFF;
 
     @media (max-width: 700px) {
@@ -60,7 +57,7 @@ export const MainButton = styled(Link)`
     color: #ffffff;
     align-items: center;
     text-decoration: none;
-    background-color: #88AF65;
+    background-color: #4B7253;
     box-shadow: -1px 1px 6px #777777;
     transition: background-color 0.3s ease;
 
@@ -70,7 +67,7 @@ export const MainButton = styled(Link)`
     }
 
     &:hover {
-        background-color: #8fb76a;
+        background-color: #638E6C;
     }
 `
 
