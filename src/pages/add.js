@@ -5,7 +5,7 @@ import { auth } from './../firebase/firebase'
 import { Content, Deck, Header } from '../components'
 import * as ROUTES from '../constants/routes'
 
-function Home() {
+function Add() {
     // const user = useSelector(getUser)
     const deckList = true;
 
@@ -33,7 +33,7 @@ function Home() {
             
             <Content.Group src={`../../images/home_background.jpg`} gradient fitScreen>
                 <Deck>
-                    <Deck.Title>{ deckList ? 'Select Deck' : 'No Decks Found' }</Deck.Title>
+                    <Deck.Title>{ deckList ? 'Add Deck' : 'No Decks Found' }</Deck.Title>
 
                     {
                     deckList &&
@@ -69,11 +69,11 @@ function Home() {
                     </Deck.CourseList>
                     }
 
-                    <Deck.Button to={ROUTES.ADD_DECK}>Add Deck</Deck.Button>
+                    <Deck.Button to={ROUTES.HOME}>Return to Home</Deck.Button>
                 </Deck>
             </Content.Group>
         </Content>
     )
 }
 
-export default Home
+export default Add

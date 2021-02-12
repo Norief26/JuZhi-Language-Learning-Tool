@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { auth } from './firebase/firebase'
 import { login, logout, getUser } from './redux/userSlice'
 import { RedirectedRoute, ProtectedRoute } from './utils/protectedRoutes'
-import { Home, Signin, Signup, Welcome } from './pages'
+import { Add, Home, Signin, Signup, Welcome } from './pages'
 import * as ROUTES from './constants/routes'
 
 function App() {
@@ -33,8 +33,12 @@ function App() {
     return (
         <Router>
             <Switch>
-                <ProtectedRoute user={user} path={ROUTES.HOME}>
+                <ProtectedRoute user={user} exact path={ROUTES.HOME}>
                     <Home/>
+                </ProtectedRoute>
+
+                <ProtectedRoute user={user} path={ROUTES.ADD_DECK}>
+                    <Add/>
                 </ProtectedRoute>
 
                 <RedirectedRoute user={user} authPath={ROUTES.HOME} path={ROUTES.SIGN_IN}>
