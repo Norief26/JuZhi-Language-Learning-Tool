@@ -32,13 +32,11 @@ function SignIn() {
 
     return (
         <Content>
-            <Header>
-                <Header.Frame>
-                    <Header.Logo to={ROUTES.WELCOME}/>
-                </Header.Frame>
+            <Header center>
+                <Header.Logo to={ROUTES.WELCOME}/>
             </Header>
 
-            <Content.Group src={!isMobile && `../../images/home_background.jpg`} fitScreen gradient>
+            <Content.Group src={!isMobile && `../../images/home_background.jpg`} fitScreen gradient headerOffset>
                 <Form isMobile={isMobile}>
                     <Form.Frame>
                         <Form.Title>

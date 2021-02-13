@@ -9,14 +9,9 @@ export const Group = styled.section`
     justify-content: center;
 
     ${({ fitScreen }) => fitScreen && `height: 100vh`};
+    ${({ headerOffset }) => headerOffset && `height: calc(100vh - 62px)`};
 
     background: ${({ gradient, src}) => (gradient ? 
         `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url(${src}) center / cover` 
         : `url(${src}) bottom / cover`)};
-    
-    /* > * {
-        &:first-child {
-            width: 1580px;
-        }
-    } */
 `

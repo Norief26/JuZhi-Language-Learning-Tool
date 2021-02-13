@@ -6,15 +6,13 @@ function Home() {
     return (
         <>
         <Content>
-            <Header>
-                <Header.Frame>
+            <Header fixed>
                 <Header.Logo to={ROUTES.WELCOME}/>
-                    <Header.Nav>
-                        <Header.NavItem to={ROUTES.WELCOME}>ABOUT US</Header.NavItem>
-                        <Header.NavItem to={ROUTES.SIGN_IN}>LOG IN</Header.NavItem>
-                        <Header.EmphasizedNavItem to={ROUTES.SIGN_UP}>SIGN UP</Header.EmphasizedNavItem>
-                    </Header.Nav>
-                </Header.Frame>
+                <Header.Nav>
+                    <Header.NavItem to={ROUTES.WELCOME}>ABOUT US</Header.NavItem>
+                    <Header.NavItem to={ROUTES.SIGN_IN}>LOG IN</Header.NavItem>
+                    <Header.EmphasizedNavItem to={ROUTES.SIGN_UP}>SIGN UP</Header.EmphasizedNavItem>
+                </Header.Nav>
             </Header>
 
             <Content.Group src={`../../images/home_background.jpg`} gradient fitScreen>

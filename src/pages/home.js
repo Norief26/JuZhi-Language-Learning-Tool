@@ -1,34 +1,15 @@
 import React from 'react'
-// import { useSelector } from 'react-redux'
-import { auth } from './../firebase/firebase'
-// import { getUser } from '../redux/userSlice'
 import { Content, Deck, Header } from '../components'
 import * as ROUTES from '../constants/routes'
 
 function Home() {
-    // const user = useSelector(getUser)
     const deckList = true;
-
-    const handleSignOut = () => {
-        auth.signOut().catch((error) => {
-            console.log(error)
-        })
-    }
 
     return (
         <Content>
-            <Header>
-                <Header.Frame>
-                    <Header.Logo to={ROUTES.WELCOME}/>
-                    <Header.DropDownButton>
-                        Account
-                        <Header.DropDownMenu>
-                            <Header.DropDownMenuItem onClick={handleSignOut}>
-                                Sign Out
-                            </Header.DropDownMenuItem>
-                        </Header.DropDownMenu>
-                    </Header.DropDownButton>
-                </Header.Frame>
+            <Header fixed>
+                <Header.Logo to={ROUTES.WELCOME}/>
+                <Header.AccountMenu/>
             </Header>
             
             <Content.Group src={`../../images/home_background.jpg`} gradient fitScreen>
@@ -38,28 +19,7 @@ function Home() {
                     {
                     deckList &&
                     <Deck.CourseList>
-                        <Deck.Course>
-                            <Deck.Image/>
-                            <Deck.Data>
-                                <span>Remaining</span>
-                                <span>0</span>
-                            </Deck.Data>
-                        </Deck.Course>
-                        <Deck.Course>
-                            <Deck.Image/>
-                            <Deck.Data>
-                                <span>Remaining</span>
-                                <span>0</span>
-                            </Deck.Data>
-                        </Deck.Course>
-                        <Deck.Course>
-                            <Deck.Image/>
-                            <Deck.Data>
-                                <span>Remaining</span>
-                                <span>0</span>
-                            </Deck.Data>
-                        </Deck.Course>
-                        <Deck.Course>
+                        <Deck.Course to={ROUTES.COURSE}>
                             <Deck.Image/>
                             <Deck.Data>
                                 <span>Remaining</span>
@@ -69,7 +29,7 @@ function Home() {
                     </Deck.CourseList>
                     }
 
-                    <Deck.Button to={ROUTES.ADD_DECK}>Add Deck</Deck.Button>
+                    <Deck.Button to={ROUTES.BROWSE}>Add Deck</Deck.Button>
                 </Deck>
             </Content.Group>
         </Content>

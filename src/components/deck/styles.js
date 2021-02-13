@@ -35,7 +35,7 @@ export const Container = styled.div`
     width: 1580px;
 `
 
-export const Course = styled.div`
+export const Course = styled(Link)`
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -43,6 +43,8 @@ export const Course = styled.div`
     cursor: pointer;
     box-shadow: -1px 1px 6px #777777;
     transition: transform 0.1s ease;
+    text-decoration: none;
+    color: #000000;
     /* max-width: 64px; */
 
     @media (max-width: 700px) {
@@ -70,7 +72,7 @@ export const CourseList = styled.div`
     }
 `
 
-export const Data = styled.span`
+export const Data = styled.div`
     display: flex;
     flex-direction: column;
     height: 100%;

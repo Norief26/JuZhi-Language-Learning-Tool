@@ -127,4 +127,8 @@ export const Text = styled.span`
 export const Title = styled.h2`
     margin-top: 56px;
     margin-bottom: 16px;
+
+    @media (max-height: 500px) {
+        margin-top: 16px;
+    }
 `

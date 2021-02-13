@@ -1,5 +1,6 @@
 import React, { useState, useContext, createContext } from 'react';
 import { Link } from 'react-router-dom';
+import { auth } from './../../firebase/firebase'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { Container, DropDownButton, DropDownMenu, DropDownMenuItem, EmphasizedNavItem, Frame, Logo, Nav, NavItem } from './style'
 
@@ -7,6 +8,25 @@ const DropDownContext = createContext();
 
 function Header({ active, children, ...props }) {
     return <Container {...props}>{children}</Container>
+}
+
+Header.AccountMenu = function HeaderAccountMenu() {
+    const handleSignOut = () => {
+        auth.signOut().catch((error) => {
+            console.log(error)
+        })
+    }
+
+    return (
+        <Header.DropDownButton>
+            Account
+            <Header.DropDownMenu>
+                <Header.DropDownMenuItem onClick={handleSignOut}>
+                    Sign Out
+                </Header.DropDownMenuItem>
+            </Header.DropDownMenu>
+        </Header.DropDownButton>
+    )
 }
 
 Header.DropDownButton = function HeaderDropDownButton({ children, ...props }) {

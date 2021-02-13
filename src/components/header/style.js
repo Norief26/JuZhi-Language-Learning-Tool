@@ -3,8 +3,30 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    height: 52px;
+    width: 100%;
+    padding: 5px 0px;
+    top: 0;
+    left: 0;
+    background-color: rgba(17,17,17,0.85);
+    box-shadow: -1px 1px 6px #777777;
+
+    ${({ fixed }) => ( fixed && `position: fixed;`)};
+    ${({ center }) => ( center ? `justify-content: center;`: `justify-content: space-between;`)};
+    
+    > * {
+        &:first-child {
+            margin-left: 20px;
+        }
+    }
+
+    > * {
+        &:last-child {
+            margin-right: 20px;
+        }
+    }
 `
 
 export const DropDownButton = styled.span`
@@ -72,20 +94,12 @@ export const DropDownMenuItem = styled.span`
 
 export const Frame = styled.div`
     display: flex;
+    width: inherit;
     align-items: center;
-    width: 100%;
-    padding: 5px 0px;
-    position: fixed;
-    top: 0;
-    left: 0;
     background-color: rgba(17,17,17,0.85);
     box-shadow: -1px 1px 6px #777777;
 
     ${({ center }) => ( center ?  `justify-content: center;`: `justify-content: space-between;`)};
-
-    @media (max-width: 700px) {
-        height: 48px;
-    }
 
     > * {
         &:first-child {
@@ -107,14 +121,6 @@ export const EmphasizedNavItem = styled(Link)`
     background-color: #4B7253;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-
-    @media (max-width: 700px) {
-        font-size: 16px;
-    }
-
-    @media (max-height: 500px) {
-        font-size: 16px;
-    }
 
     &:hover {
         background-color: #638E6C;
@@ -155,10 +161,6 @@ export const NavItem = styled(Link)`
 
 export const Logo = styled.img`
     height: 48px;
-
-    @media (max-width: 700px) {
-        height: 48px;
-    }
 
     @media (max-height: 500px) {
         height: 36px;
