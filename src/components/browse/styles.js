@@ -2,25 +2,70 @@ import styled from 'styled-components/macro'
 
 export const Container = styled.div`
     display: flex;
-    /* flex-direction: row; */
-    height: 95%;
-    width: 1580px;
+    flex-direction: column;
+    height: fit-content;
+    min-height: 500px;
+    width: 1000px;
     padding: 16px;
     /* justify-content: space-between; */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px #777777;
+
+    a {
+        color: #000000;
+    }
+`
+
+export const Course = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: -1px 1px 6px #777777;
+    transition: transform 0.1s ease;
+    text-decoration: none;
+    color: #000000;
+    /* max-width: 64px; */
+
+    @media (max-width: 700px) {
+        max-width: 72px;
+    }
+
+    @media (max-height: 500px) {
+        max-width: 64px;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+`
+
+export const CourseData = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: #CCCCCC;
+    text-transform: capitalize;
+    border-radius: 0px 0px 10px 10px;
 `
 
 export const CourseList = styled.div`
     display: inline-flex;
     height: fit-content;
     /* min-width: 80%; */
-    padding: 16px;
-    background-color: #ffffff;
+    /* padding: 16px; */
+    /* background-color: #ffffff; */
     border-radius: 10px;
 `
 
-export const Course = styled.div`
-    display: flex;
-    flex-direction: column;
+export const CourseImage = styled.img`
+    object-fit: contain;
+    background-color: #000000;
+    border-radius: 10px 10px 0px 0px;
 `
 
 export const DropDownButton = styled.span`
@@ -32,7 +77,7 @@ export const DropDownButton = styled.span`
     width: 80%;
     cursor: pointer;
     user-select: none;
-    text-transform:capitalize;
+    text-transform: capitalize;
     transition: border-radius 0.3s ease;
     border: 1px solid lightgray;
 
@@ -96,6 +141,7 @@ export const FilterItem = styled.span`
     background-color: #ffffff;
     border: 1px solid lightgray;
     cursor: pointer;
+    text-transform: capitalize;
     
     &.active {
         background-color: #eeeeee;
@@ -112,6 +158,7 @@ export const FilterList = styled.div`
     background-color: #ffffff;
     /* border: 1px solid lightgray; */
     border-radius: 10px;
+    border-right: 1px solid grey;
 `
 
 export const FilterTitle = styled.span`
@@ -119,6 +166,10 @@ export const FilterTitle = styled.span`
     font-weight: bold;
 `
 
-export const Title = styled.h1`
+export const Frame = styled.div`
+    display: flex;
+`
 
+export const Title = styled.h1`
+    padding: 16px;
 `

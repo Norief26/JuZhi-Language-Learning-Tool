@@ -7,6 +7,7 @@ function BrowsePage() {
     const [spokenLanguage, setSpokenLanguage] = useState("english")
     const [languages, setLanguages] = useState([])
     const [filters, setFilters] = useState([])
+    const [courses, setCourses] = useState([])
     // const deckList = true;
 
     useEffect(() => {
@@ -16,11 +17,9 @@ function BrowsePage() {
     }, [])
 
     useEffect(() => {
-        const allFilters = filters.concat(spokenLanguage)
-
-        // DATA.browseCourses(allFilters).then((courses) => {
-        //     console.log(courses)
-        // })
+        DATA.browseCourses(spokenLanguage, filters).then((courses) => {
+            setCourses(courses)
+        })
     }, [filters, spokenLanguage])
 
     return (
@@ -32,29 +31,47 @@ function BrowsePage() {
 
             <Content.Group src={`../../images/home_background.jpg`} gradient fitScreen headerOffset>
                 <Browse>
-                    <Browse.FilterList>
-                        <Browse.FilterCategory>
-                            <Browse.FilterTitle>
-                                Select Your Language:
-                            </Browse.FilterTitle>
-                            <Browse.LanguageMenu languages={languages} setSpokenLanguage={setSpokenLanguage}/>
-                        </Browse.FilterCategory>
+                    <Browse.Title>
+                        Browser Courses:
+                    </Browse.Title>
 
-                        <Browse.FilterCategory>
-                            <Browse.FilterTitle>
-                                Languages:
-                            </Browse.FilterTitle>
-                            {languages.map((language) => (
-                                <Browse.FilterItem key={language.id} language={language.name} filters={filters} setFilters={setFilters}>
-                                    {language.name}
-                                </Browse.FilterItem>
+                    <Browse.Frame>
+                        <Browse.FilterList>
+                            <Browse.FilterCategory>
+                                <Browse.FilterTitle>
+                                    Select Your Language:
+                                </Browse.FilterTitle>
+                                <Browse.LanguageMenu languages={languages} setSpokenLanguage={setSpokenLanguage}/>
+                            </Browse.FilterCategory>
+
+                            <Browse.FilterCategory>
+                                <Browse.FilterTitle>
+                                    Languages:
+                                </Browse.FilterTitle>
+                                {languages.map((language) => {
+                                    if(language.name === spokenLanguage) return null
+
+                                    return (
+                                        <Browse.FilterItem key={language.id} setFilters={setFilters} languageName={language.name}>
+                                            {language.name}
+                                        </Browse.FilterItem>
+                                    )
+                                })}
+                            </Browse.FilterCategory>
+                        </Browse.FilterList>
+
+                        <Browse.CourseList>
+                            {courses.map((course) => (
+                                <Browse.Course key={course.id}>
+                                    <Browse.CourseImage src={`../../images/${course.src}`}/>
+                                    <Browse.CourseData>
+                                        {course.name}
+                                    </Browse.CourseData>
+                                </Browse.Course>
                             ))}
-                        </Browse.FilterCategory>
-                    </Browse.FilterList>
-
-                    <Browse.CourseList>
-                        Course List
-                    </Browse.CourseList>
+                        </Browse.CourseList>
+                    </Browse.Frame>
+                    
                 </Browse>
             </Content.Group>
         </Content>

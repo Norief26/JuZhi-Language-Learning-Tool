@@ -7,12 +7,12 @@ function Home() {
 
     return (
         <Content>
-            <Header fixed>
+            <Header>
                 <Header.Logo to={ROUTES.WELCOME}/>
                 <Header.AccountMenu/>
             </Header>
             
-            <Content.Group src={`../../images/home_background.jpg`} gradient fitScreen>
+            <Content.Group src={`../../images/home_background.jpg`} gradient fitScreen headerOffset>
                 <Deck>
                     <Deck.Title>{ deckList ? 'Select Deck' : 'No Decks Found' }</Deck.Title>
 

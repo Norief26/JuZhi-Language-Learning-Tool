@@ -10,7 +10,7 @@ function Course() {
                 <Header.AccountMenu/>
             </Header>
             
-            <Content.Group src={`../../images/home_background.jpg`} gradient fitScreen>
+            <Content.Group src={`../../images/home_background.jpg`} gradient fitScreen headerOffset>
                 <Card>
                     <Card.Frame>
                         

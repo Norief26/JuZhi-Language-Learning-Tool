@@ -1,19 +1,37 @@
 import React, { useState, useContext, createContext } from 'react';
+import { Link } from 'react-router-dom'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import { Container, CourseList, Course, DropDownButton, DropDownMenu, DropDownMenuItem, FilterCategory, FilterItem, FilterList, FilterTitle, Title } from './styles'
+import { Container, Course, CourseData, CourseList, CourseImage, DropDownButton, DropDownMenu, DropDownMenuItem, FilterCategory, FilterItem, FilterList, FilterTitle, Frame, Title } from './styles'
+import * as ROUTES from '../../constants/routes'
 
 const DropDownContext = createContext();
 
 function Browse({ children, ...props}) {
-    return <Container {...props}>{children}</Container>
+    return (
+        <Container {...props}>
+            <Link to={ROUTES.HOME}>
+                <ArrowBackIcon/>
+            </Link>
+            {children}
+        </Container>
+    )
+}
+
+Browse.Course = function BrowseCourse({ children, ...props }) {
+    return <Course {...props}>{children}</Course>
+}
+
+Browse.CourseData = function BrowseCourseData({ children, ...props }) {
+    return <CourseData {...props}>{children}</CourseData>
 }
 
 Browse.CourseList = function BrowseCourseList({ children, ...props }) {
     return <CourseList {...props}>{children}</CourseList>
 }
 
-Browse.Course = function BrowseCourse({ children, ...props }) {
-    return <Course {...props}>{children}</Course>
+Browse.CourseImage = function BrowseCourseImage({ children, ...props }) {
+    return <CourseImage {...props}>{children}</CourseImage>
 }
 
 Browse.DropDownButton = function BrowseDropDownButton({ children, ...props }) {
@@ -43,13 +61,13 @@ Browse.FilterCategory = function BrowseFilterCategory({ children, ...props }) {
     return <FilterCategory {...props}>{children}</FilterCategory>
 }
 
-Browse.FilterItem = function BrowseFilterItem({setFilters, filters, language, children, ...props }) {
+Browse.FilterItem = function BrowseFilterItem({setFilters, languageName, children, ...props }) {
     const [active, setActive] = useState(false)
 
     return (
         <FilterItem {...props} className={active && 'active'} onClick={() => {
             setFilters(filters => (
-                !active ? [...filters, language] : [...filters.filter(val => val !== language)]
+                !active ? [...filters, languageName] : [...filters.filter(val => val !== languageName)]
             ))
             setActive(!active)
         }}>
@@ -64,6 +82,10 @@ Browse.FilterList = function BrowseFilterList({ children, ...props }) {
 
 Browse.FilterTitle = function BrowseFilterTitle({ children, ...props }) {
     return <FilterTitle {...props}>{children}</FilterTitle>
+}
+
+Browse.Frame = function BrowserFrame({ children, ...props }) {
+    return <Frame {...props}>{children}</Frame>
 }
 
 Browse.LanguageMenu = function BrowseLanguageMenu({ languages, setSpokenLanguage }) {
