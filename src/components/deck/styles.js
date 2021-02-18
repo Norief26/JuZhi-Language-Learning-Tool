@@ -45,7 +45,6 @@ export const Course = styled(Link)`
     transition: transform 0.1s ease;
     text-decoration: none;
     color: #000000;
-    /* max-width: 64px; */
 
     @media (max-width: 700px) {
         max-width: 72px;

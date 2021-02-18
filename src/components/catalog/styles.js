@@ -52,5 +52,4 @@ export const IconGroup = styled.div`
     justify-items: center;
     flex-wrap: wrap;
     padding-bottom: 64px;
-    /* padding-right: 64px; */
 `

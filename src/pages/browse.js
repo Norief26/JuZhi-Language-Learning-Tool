@@ -61,7 +61,7 @@ function BrowsePage() {
                         </Browse.FilterList>
 
                         <Browse.CourseList>
-                            {courses.map((course) => (
+                            {!courses.length ? 'No courses found.' : courses.map((course) => (
                                 <Browse.Course key={course.id}>
                                     <Browse.CourseImage src={`../../images/${course.src}`}/>
                                     <Browse.CourseData>

@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { isMobile } from 'react-device-detect'
 
 export const Container = styled.div`
     display: flex;
@@ -7,7 +8,6 @@ export const Container = styled.div`
     min-height: 500px;
     width: 1000px;
     padding: 16px;
-    /* justify-content: space-between; */
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 3px 5px #777777;
@@ -27,7 +27,6 @@ export const Course = styled.div`
     transition: transform 0.1s ease;
     text-decoration: none;
     color: #000000;
-    /* max-width: 64px; */
 
     @media (max-width: 700px) {
         max-width: 72px;
@@ -56,9 +55,6 @@ export const CourseData = styled.div`
 export const CourseList = styled.div`
     display: inline-flex;
     height: fit-content;
-    /* min-width: 80%; */
-    /* padding: 16px; */
-    /* background-color: #ffffff; */
     border-radius: 10px;
 `
 
@@ -151,12 +147,10 @@ export const FilterItem = styled.span`
 export const FilterList = styled.div`
     display: flex;
     flex-direction: column;
-    /* min-width: 15%; */
     height: fit-content;
     margin-right: 20px;
     padding: 16px;
     background-color: #ffffff;
-    /* border: 1px solid lightgray; */
     border-radius: 10px;
     border-right: 1px solid grey;
 `
@@ -171,5 +165,5 @@ export const Frame = styled.div`
 `
 
 export const Title = styled.h1`
-    padding: 16px;
+    padding: 0px 16px;
 `

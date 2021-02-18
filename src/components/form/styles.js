@@ -32,18 +32,10 @@ export const Divider = styled.hr`
     color: lightgray;
     width: 80%;
     max-width: 600px;
-    /* margin-top: 10px; */
-    /* margin-bottom: 20px; */
-
-    @media (max-height: 500px) {
-        /* display: none; */
-        /* margin-bottom: 10px */
-    }
 `
 
 export const Error = styled.span`
     color: #ffffff;
-    /* height: 0px; */
     font-size: 16px;
     padding: 8px;
     background-color: #E87C03;
