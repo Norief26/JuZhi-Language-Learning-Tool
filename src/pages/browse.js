@@ -8,7 +8,6 @@ function BrowsePage() {
     const [languages, setLanguages] = useState([])
     const [filters, setFilters] = useState([])
     const [courses, setCourses] = useState([])
-    // const deckList = true;
 
     useEffect(() => {
         DATA.getLanguages().then((languages) => {
@@ -29,36 +28,38 @@ function BrowsePage() {
                 <Header.AccountMenu/>
             </Header>
 
-            <Content.Group src={`../../images/home_background.jpg`} gradient fitScreen headerOffset>
+            <Content.Group fitScreen headerOffset>
                 <Browse>
-                    <Browse.Title>
-                        Browser Courses:
-                    </Browse.Title>
+                    <Browse.FilterSection>
+                        <Browse.FilterCategory>
+                            <Browse.FilterHeader>
+                                Select Your Language:
+                            </Browse.FilterHeader>
 
-                    <Browse.Frame>
-                        <Browse.FilterList>
-                            <Browse.FilterCategory>
-                                <Browse.FilterTitle>
-                                    Select Your Language:
-                                </Browse.FilterTitle>
-                                <Browse.LanguageMenu languages={languages} setSpokenLanguage={setSpokenLanguage}/>
-                            </Browse.FilterCategory>
+                            <Browse.LanguageMenu languages={languages} setSpokenLanguage={setSpokenLanguage}/>
+                        </Browse.FilterCategory>
 
-                            <Browse.FilterCategory>
-                                <Browse.FilterTitle>
-                                    Languages:
-                                </Browse.FilterTitle>
-                                {languages.map((language) => {
-                                    if(language.name === spokenLanguage) return null
+                        <Browse.FilterCategory>
+                            <Browse.FilterHeader>
+                                Languages:
+                            </Browse.FilterHeader>
 
-                                    return (
-                                        <Browse.FilterItem key={language.id} setFilters={setFilters} languageName={language.name}>
-                                            {language.name}
-                                        </Browse.FilterItem>
-                                    )
-                                })}
-                            </Browse.FilterCategory>
-                        </Browse.FilterList>
+                            {languages.map((language) => {
+                                if(language.name === spokenLanguage) return null
+
+                                return (
+                                    <Browse.FilterItem key={language.id} setFilters={setFilters} languageName={language.name}>
+                                        {language.name}
+                                    </Browse.FilterItem>
+                                )
+                            })}
+                        </Browse.FilterCategory>
+                    </Browse.FilterSection>
+
+                    <Browse.CourseSection>
+                        <Browse.Title>
+                            Browse Courses
+                        </Browse.Title>
 
                         <Browse.CourseList>
                             {!courses.length ? 'No courses found.' : courses.map((course) => (
@@ -70,8 +71,7 @@ function BrowsePage() {
                                 </Browse.Course>
                             ))}
                         </Browse.CourseList>
-                    </Browse.Frame>
-                    
+                    </Browse.CourseSection>
                 </Browse>
             </Content.Group>
         </Content>

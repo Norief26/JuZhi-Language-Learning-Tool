@@ -1,21 +1,15 @@
 import styled from 'styled-components/macro'
-import { isMobile } from 'react-device-detect'
 
 export const Container = styled.div`
     display: flex;
-    flex-direction: column;
-    height: fit-content;
-    min-height: 500px;
-    width: 1000px;
-    padding: 16px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 3px 5px #777777;
+    height: 100%;
+    width: 100%;
 
-    a {
-        color: #000000;
+    @media (max-width: 700px) {
+        flex-direction: column;
     }
 `
+
 
 export const Course = styled.div`
     display: flex;
@@ -31,11 +25,9 @@ export const Course = styled.div`
     @media (max-width: 700px) {
         max-width: 72px;
     }
-
     @media (max-height: 500px) {
         max-width: 64px;
     }
-
     &:hover {
         transform: scale(1.05);
     }
@@ -64,6 +56,12 @@ export const CourseImage = styled.img`
     border-radius: 10px 10px 0px 0px;
 `
 
+export const CourseSection = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+`
+
 export const DropDownButton = styled.span`
     display: flex;
     align-items: center;
@@ -75,7 +73,9 @@ export const DropDownButton = styled.span`
     user-select: none;
     text-transform: capitalize;
     transition: border-radius 0.3s ease;
-    border: 1px solid lightgray;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 4px;
 
     > * {
         &:last-child {
@@ -84,28 +84,18 @@ export const DropDownButton = styled.span`
             margin-left: 20px;
         }
     }
-
-    &.show {
-        border-radius: 4px 4px 0px 0px;
-    }
-
-    &.hide {
-        border-radius: 4px;
-    }
 `
 
 export const DropDownMenu = styled.div`
     flex-direction: column;
     position: absolute;
-    top: 90%;
+    top: 80%;
     left: 15%;
     width: inherit;
-    box-shadow: 0px 3px 5px #777777;
 
     &.show {
         display: flex;
     }
-
     &.hide {
         display: none;
     }
@@ -113,7 +103,7 @@ export const DropDownMenu = styled.div`
 
 export const DropDownMenuItem = styled.span`
     padding: 8px 16px;
-    width: inherit;
+    width: 100%;
     height: inherit;
     background-color: #ffffff;
     border: 1px solid lightgray;
@@ -121,49 +111,55 @@ export const DropDownMenuItem = styled.span`
     &:hover {
         background-color: #eeeeee;
     }
-
     &:first-letter {
         text-transform:capitalize;
+    }
+`
+
+
+
+export const FilterItem = styled.span`
+    color: #000000;
+    padding: 8px 12px;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    text-transform: capitalize;
+    border: 1px solid lightgray;
+    
+    &.active {
+        background-color: #cccccc;
+        /* border: 1px solid #4B7253; */
     }
 `
 
 export const FilterCategory = styled.div`
     display: flex;
     flex-direction: column;
+    color: #ffffff;
+    padding: 8px 16px;
+
 `
 
-export const FilterItem = styled.span`
-    padding: 8px 12px;
-    background-color: #ffffff;
-    border: 1px solid lightgray;
-    cursor: pointer;
-    text-transform: capitalize;
-    
-    &.active {
-        background-color: #eeeeee;
-    }
-`
-
-export const FilterList = styled.div`
+export const FilterSection = styled.div`
     display: flex;
     flex-direction: column;
-    height: fit-content;
-    margin-right: 20px;
-    padding: 16px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    border-right: 1px solid grey;
+    background-color: rgba(37, 37, 37, 0.85);
+    overflow: auto;
 `
 
-export const FilterTitle = styled.span`
+export const FilterHeader = styled.span`
     padding: 16px 0px;
-    font-weight: bold;
 `
 
-export const Frame = styled.div`
+export const Title = styled.div`
     display: flex;
-`
+    align-items: center;
 
-export const Title = styled.h1`
-    padding: 0px 16px;
+    a {
+        color: #000000;
+        line-height: 0;
+        padding-right: 16px;
+        text-decoration: none;
+    }
 `
