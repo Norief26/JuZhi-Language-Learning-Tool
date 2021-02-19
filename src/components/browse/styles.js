@@ -68,7 +68,7 @@ export const DropDownButton = styled.span`
     justify-content: space-between;
     padding: 8px 16px;
     position: relative;
-    width: 80%;
+    min-width: 80%;
     cursor: pointer;
     user-select: none;
     text-transform: capitalize;
@@ -90,8 +90,8 @@ export const DropDownMenu = styled.div`
     flex-direction: column;
     position: absolute;
     top: 80%;
-    left: 15%;
-    width: inherit;
+    /* left: 15%; */
+    min-width: inherit;
 
     &.show {
         display: flex;
@@ -103,7 +103,7 @@ export const DropDownMenu = styled.div`
 
 export const DropDownMenuItem = styled.span`
     padding: 8px 16px;
-    width: 100%;
+    min-width: 100%;
     height: inherit;
     background-color: #ffffff;
     border: 1px solid lightgray;
@@ -137,7 +137,7 @@ export const FilterCategory = styled.div`
     display: flex;
     flex-direction: column;
     color: #ffffff;
-    padding: 8px 16px;
+    padding: 8px 24px;
 
 `
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Browse, Content, Header } from '../components'
+import { Browse, Content, Header, Modal } from '../components'
 import * as DATA from '../firebase/data'
 import * as ROUTES from '../constants/routes'
 
@@ -8,6 +8,8 @@ function BrowsePage() {
     const [languages, setLanguages] = useState([])
     const [filters, setFilters] = useState([])
     const [courses, setCourses] = useState([])
+    const [modal, setModal] = useState(false)
+    const [selectedCourse, setSelectedCourse] = useState({})
 
     useEffect(() => {
         DATA.getLanguages().then((languages) => {
@@ -63,7 +65,10 @@ function BrowsePage() {
 
                         <Browse.CourseList>
                             {!courses.length ? 'No courses found.' : courses.map((course) => (
-                                <Browse.Course key={course.id}>
+                                <Browse.Course key={course.id} onClick={() => {
+                                    setSelectedCourse(course)    
+                                    setModal(true)
+                                }}>
                                     <Browse.CourseImage src={`../../images/${course.src}`}/>
                                     <Browse.CourseData>
                                         {course.name}
@@ -74,6 +79,18 @@ function BrowsePage() {
                     </Browse.CourseSection>
                 </Browse>
             </Content.Group>
+
+            <Modal modal={modal} setModal={setModal}>
+                <Browse.Course>
+                    <Browse.CourseImage src={`../../images/${selectedCourse.src}`}/>
+                    <Browse.CourseData>
+                        {selectedCourse.name}
+                    </Browse.CourseData>
+                </Browse.Course>
+                Add this deck?
+                <button>Cancel</button>
+                <button>Confirm</button>
+            </Modal>
         </Content>
     )
 }
