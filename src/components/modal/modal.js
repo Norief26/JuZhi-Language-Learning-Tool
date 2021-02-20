@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
-import { Background, Container } from './styles'
+import { Background, Container, Title } from './styles'
 
-function Modal({ children, modal, setModal, ...props}) {
+function Modal({ children, modal, setModal, title, ...props}) {
     const ref = useRef(null)
 
     const closeModal = (e) => {
@@ -19,7 +19,10 @@ function Modal({ children, modal, setModal, ...props}) {
 
     return (
         <Background className={modal ? 'show' : 'hide'} ref={ref}>
-            <Container {...props} className={modal ? 'show' : 'hide'}>{children}</Container>
+            <Container {...props} className={modal ? 'show' : 'hide'}>
+                { title && <Title>{title}</Title>}
+                {children}
+            </Container>
         </Background>
     )
 }

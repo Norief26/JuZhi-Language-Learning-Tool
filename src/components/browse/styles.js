@@ -10,6 +10,12 @@ export const Container = styled.div`
     }
 `
 
+export const ButtonSection = styled.div`
+    display: flex;
+    background-color: #EAEAEA;
+    border-top: 1px solid lightgray;
+    padding: 16px;
+`
 
 export const Course = styled.div`
     display: flex;
@@ -150,6 +156,46 @@ export const FilterSection = styled.div`
 
 export const FilterHeader = styled.span`
     padding: 16px 0px;
+`
+
+export const MainButton = styled.button`
+    display: flex;
+    padding: 8px 40px;
+    color: #ffffff;
+    align-items: center;
+    background-color: #4B7253;
+    transition: background-color 0.3s ease;
+    border: none;
+    margin-left: 10px;
+
+    @media (max-width: 700px) {
+        font-size: 14px;
+        padding: 10px 30px;
+    }
+
+    &:hover {
+        background-color: #638E6C;
+    }
+`
+
+export const SecondaryButton = styled.button`
+    display: flex;
+    padding: 8px 40px;
+    color: #4D4D4D;
+    align-items: center;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+    border: none;
+    margin-right: 10px;
+
+    @media (max-width: 700px) {
+        font-size: 14px;
+        padding: 10px 30px;
+    }
+
+    &:hover {
+        background-color: #f5f5f5;
+    }
 `
 
 export const Title = styled.div`

@@ -22,12 +22,13 @@ export const Background = styled.div`
 
 export const Container = styled.div`
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 16px;
     background-color: #ffffff;
-    border-radius: 10px;
+    width: fit-content;
+    border: 3px solid #EAEAEA;
     object-fit: contain;
+
+    ${({ column }) => ( column ? `flex-direction: column`: `flex-direction: row`)};
 
     &.show {
         display: flex;
@@ -36,4 +37,11 @@ export const Container = styled.div`
     &.hide {
         display: none;
     }
+`
+
+export const Title = styled.div`
+    font-size: 20px;
+    width: calc(100% - 16px);
+    padding: 8px;
+    background-color: #EAEAEA;
 `

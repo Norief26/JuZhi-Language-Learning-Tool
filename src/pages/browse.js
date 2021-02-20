@@ -80,16 +80,23 @@ function BrowsePage() {
                 </Browse>
             </Content.Group>
 
-            <Modal modal={modal} setModal={setModal}>
+            <Modal modal={modal} setModal={setModal} column title={"Add Deck"}>
                 <Browse.Course>
                     <Browse.CourseImage src={`../../images/${selectedCourse.src}`}/>
                     <Browse.CourseData>
                         {selectedCourse.name}
                     </Browse.CourseData>
                 </Browse.Course>
-                Add this deck?
-                <button>Cancel</button>
-                <button>Confirm</button>
+
+                <Browse.ButtonSection>
+                    <Browse.SecondaryButton onClick={() => setModal(false)}>
+                        Cancel
+                    </Browse.SecondaryButton>
+
+                    <Browse.MainButton onClick={() => DATA.addDeck()}>
+                        Confirm
+                    </Browse.MainButton>
+                </Browse.ButtonSection>
             </Modal>
         </Content>
     )

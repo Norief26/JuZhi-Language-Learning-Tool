@@ -2,13 +2,17 @@ import React, { useState, useContext, createContext } from 'react';
 import { Link } from 'react-router-dom'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import { Container, Course, CourseData, CourseList, CourseImage, CourseSection, DropDownButton, DropDownMenu, DropDownMenuItem, FilterCategory, FilterHeader, FilterItem, FilterSection, Title } from './styles'
+import { ButtonSection, Container, Course, CourseData, CourseList, CourseImage, CourseSection, DropDownButton, DropDownMenu, DropDownMenuItem, FilterCategory, FilterHeader, FilterItem, FilterSection, MainButton, SecondaryButton, Title } from './styles'
 import * as ROUTES from '../../constants/routes'
 
 const DropDownContext = createContext();
 
 function Browse({ children, ...props }) {
     return <Container {...props}>{children}</Container>
+}
+
+Browse.ButtonSection = function BrowseButtonSection({ children, ...props }) {
+    return <ButtonSection {...props}>{children}</ButtonSection>
 }
 
 Browse.Course = function BrowseCourse({ children, ...props }) {
@@ -100,6 +104,14 @@ Browse.LanguageMenu = function BrowseLanguageMenu({ languages, setSpokenLanguage
              </Browse.DropDownMenu>
         </Browse.DropDownButton>
     )
+}
+
+Browse.MainButton = function BrowseMainButton({ children, ...props }) {
+    return <MainButton {...props}>{children}</MainButton>
+}
+
+Browse.SecondaryButton = function BrowseSecondaryButton({ children, ...props }) {
+    return <SecondaryButton {...props}>{children}</SecondaryButton>
 }
 
 Browse.Title = function BrowseTitle({ children, ...props }) {
