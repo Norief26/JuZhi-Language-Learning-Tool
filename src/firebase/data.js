@@ -4,6 +4,10 @@ export async function addDeck() {
     console.log("Add deck called")
 }
 
+export async function addUser() {
+    console.log("Add user called")
+}
+
 export async function browseCourses(spokenLanguage, filters) {
     const courses = []
 

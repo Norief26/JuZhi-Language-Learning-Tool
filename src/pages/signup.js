@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { isMobile } from 'react-device-detect'
-import { auth, provider } from './../firebase/firebase'
+import db, { auth, provider } from './../firebase/firebase'
 import { Content, Form, Header } from '../components'
 import * as ROUTES from '../constants/routes'
 
@@ -20,7 +20,12 @@ function SignUp() {
             setError('Passwords do not match.')
         } else {
             auth.createUserWithEmailAndPassword(email, password).then((userCredential) => {
-                console.log(userCredential)
+                const user = userCredential.user
+                return db.collection('users').doc(user.uid).set({
+                    id: user.uid,
+                    email: user.email,
+                    decks: []
+                })
             }).catch((error) => {
                 setEmail('')
                 setPassword('')
